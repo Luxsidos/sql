@@ -1,1 +1,0 @@
-SELECT lastrun, cpu_busy FROM [dbo].[spt_monitor];
