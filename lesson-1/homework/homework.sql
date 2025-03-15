@@ -54,7 +54,7 @@ CREATE TABLE StudentID(ID INT PRIMARY KEY, Name VARCHAR(50), AGE INT)
 
 -- 3. DDL Data Definition Language
 -- Creates or changes the structure of tables.
--- Commands: CREATE, ALTER, DROP
+-- Commands: CREATE, ALTER, DROP, TRUNCATE
 
 -- 4. DCL - Data Control Language
 -- Controls who can access the data
