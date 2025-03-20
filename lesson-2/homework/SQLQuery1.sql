@@ -33,7 +33,8 @@ CREATE TABLE TestTable (
 INSERT INTO TestTable (ID, Data) VALUES (1, 'Sample 1'), (2, 'Sample 2');
 
 -- DELETE Removes rows but keeps the table structure and can have a WHERE clause
-DELETE FROM TestTable WHERE ID = 1;
+DELETE FROM TestTable
+WHERE ID = 1;
 
 -- TRUNCATE Removes all rows, no WHERE clause, resets identity (if any), faster, minimal logging
 TRUNCATE TABLE TestTable;
