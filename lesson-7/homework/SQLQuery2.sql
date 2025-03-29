@@ -85,7 +85,7 @@ SELECT COUNT(*) AS CountOfCustomers FROM Customers
 SELECT COUNT(DISTINCT category) AS UniqueCategories FROM Products
 
 -- 5
-SELECT SUM(SaleAmount) AS sumSaleAmount FROM Sales
+SELECT SUM(SaleAmount) AS TotalSaleAmount FROM Sales
 WHERE ProductID = 7
 
 -- 6
@@ -100,7 +100,7 @@ SELECT Category, MIN(Price) AS MinPrice, MAX(Price) AS MaxPrice
 FROM Products GROUP BY Category;
 
 -- 9
-SELECT CustomerID, SUM(SaleAmount) AS sumSales FROM Sales
+SELECT CustomerID, SUM(SaleAmount) AS TotalSales FROM Sales
 GROUP BY CustomerID
 
 -- 10
@@ -146,9 +146,9 @@ SELECT YEAR(SaleDate), SUM(SaleAmount) FROM Sales
 GROUP BY YEAR(SaleDate)
 
 -- 18
-SELECT CustomerID, COUNT(Quantity) OrderCount FROM Orders
+SELECT CustomerID, COUNT(*) OrderCount FROM Sales
 GROUP BY CustomerID
-HAVING COUNT(Quantity) >= 3
+HAVING COUNT(*) >= 3
 
 -- 19
 SELECT DepartmentName, SUM(Salary) AS TotalSalary FROM Employees
@@ -168,7 +168,7 @@ GROUP BY CustomerID
 HAVING SUM(SaleAmount) > 1500
 
 -- 22
-SELECT DepartmentName, SUM(Salary) AS SumSalary, AVG(Salary) AS AvgSalary
+SELECT DepartmentName, SUM(Salary) AS TotalSalary, AVG(Salary) AS AvgSalary
 FROM Employees
 GROUP BY DepartmentName
 HAVING AVG(Salary) > 65000
@@ -177,7 +177,7 @@ HAVING AVG(Salary) > 65000
 SELECT CustomerID, MAX(TotalAmount) AS MaxValue, MIN(TotalAmount) AS MinValue
 FROM Orders
 GROUP BY CustomerID
-HAVING MAX(TotalAmount) < 50
+HAVING MIN(TotalAmount) >= 50
 
 -- 24
 SELECT MONTH(SaleDate) as Months, SUM(SaleAmount) AS TotalSales, COUNT(DISTINCT ProductID) AS DistinctProducts FROM Sales
