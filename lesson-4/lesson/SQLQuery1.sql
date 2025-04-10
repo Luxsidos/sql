@@ -95,11 +95,11 @@ select * from [AdventureWorks2022].[Person].[Person] order by BusinessEntityID
  offset 10 rows
 
  --ERROR
---select * from [AdventureWorks2022].[Person].[Person] order by BusinessEntityID
+-- select * from [AdventureWorks2022].[Person].[Person] order by BusinessEntityID
 -- fetch next 5 rows only
 
 select * from [AdventureWorks2022].[Person].[Person] order by BusinessEntityID
- offset 10 rows fetch next 5 first only
+offset 10 rows fetch next 5 first only
 
 
 -- distinct
